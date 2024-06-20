@@ -50,7 +50,7 @@ def get_metric(accuracy,precision,recall,auc):
 
 def save_metric(metric):
     try:
-        with open('metrics.json', 'w') as file:
+        with open('reports/metrics.json', 'w') as file:
             json.dump(metric, file, indent=4)
 
     except Exception as e:
@@ -59,7 +59,7 @@ def save_metric(metric):
 
 
 def main():
-    model,test_data = read_model('model.pkl',"./data/features/test_bow.csv")
+    model,test_data = read_model('models/model.pkl',"./data/features/test_bow.csv")
     accuracy,precision,recall,auc = perform(model,test_data)
     metrics_dict = get_metric(accuracy,precision,recall,auc)
     save_metric(metrics_dict)

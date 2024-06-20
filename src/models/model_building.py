@@ -44,7 +44,7 @@ def model_training(X_train,y_train,n_estimators,learning_rate):
 
 def dump_model(model):
     try:
-        pickle.dump(model, open('model.pkl','wb'))
+        pickle.dump(model, open('models/model.pkl','wb'))
     
     except Exception as e:
         print(f"Some error occured: {e}")
